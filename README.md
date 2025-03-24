@@ -232,3 +232,5 @@ Authenticates a user and returns an access token.
 - All endpoints require authentication via Bearer token (except /api/auth/login)
 - Validation is performed on all request bodies
 - Email addresses must be unique across all customers
+- All request messages have two langs based on header Accept-Language ("uk" and "en"), default is "en"
+- Postman config located in project directory ("test-task.postman_collection.json")

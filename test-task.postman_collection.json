@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "58dd00b9-aa68-4919-b2ec-508acfa571b1",
+		"name": "test-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27465435"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "uk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"securepass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/auth/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQyODQ5NjYyLCJleHAiOjE3NDI4NTMyNjJ9.qI6nX65U6q2C814f_vS9vN6XO4qkXfF5jygxHtrarsI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/customers",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQyODUxMjU1LCJleHAiOjE3NDI4NTQ4NTV9.UYfJ5w87-_HAb40123YiFOU5iwn47DCFo--AA1tXoVA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test\",\n    \"email\": \"1@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/customers",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"fab8d649-febd-4975-9e9b-ef083fe66cc3\",\n    \"name\": \"tes2t\",\n    \"email\": \"2@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/customers",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/customers/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"customers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "06c07c23-950c-4d88-bb8e-d4af6e273dc7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/customers/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"customers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "06c07c23-950c-4d88-bb8e-d4af6e273dc7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "greet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQyODUxMjU1LCJleHAiOjE3NDI4NTQ4NTV9.UYfJ5w87-_HAb40123YiFOU5iwn47DCFo--AA1tXoVA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "uk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/greet",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"greet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
