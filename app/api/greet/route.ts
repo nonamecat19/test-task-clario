@@ -1,11 +1,7 @@
-const SUPPORTED_LANGS = ["uk", "en"]
+import {initApiLocalization} from "@/lib/localization";
 
-export function GET(request: Request) {
-    const lang = request.headers.get('accept-language')
+export async function GET(request: Request) {
+    const {t} = await initApiLocalization(request)
 
-    if (!lang || !SUPPORTED_LANGS.includes(lang)) {
-        return Response.json({}, {status: 400})
-    }
-
-    return Response.json({ lang })
+    return Response.json({ message: t("greeting") })
 }
