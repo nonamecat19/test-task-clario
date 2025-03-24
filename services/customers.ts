@@ -1,6 +1,5 @@
 import {db} from "@/lib/db";
-import {UUID} from "node:crypto";
-import {CustomerType, UpdateCustomerType} from "@/schemas/customer";
+import {CreateCustomerType, DeleteCustomerType, GetCustomerByIdType, UpdateCustomerType} from "@/schemas/customer";
 
 interface GetCustomersListOptions {
     page?: number
@@ -19,7 +18,8 @@ export function getCustomersList({page = 0, perPage = 20}: GetCustomersListOptio
     })
 }
 
-export function getCustomerById(id: UUID) {
+export function getCustomerById(customer: GetCustomerByIdType) {
+    const {id} = customer
     return db.customer.findUnique({
         where: {
             id
@@ -40,7 +40,7 @@ export function updateCustomerById(customer: UpdateCustomerType) {
     })
 }
 
-export function createCustomer(customer: CustomerType) {
+export function createCustomer(customer: CreateCustomerType) {
     const {email, name} = customer
     return db.customer.create({
         data: {
@@ -50,7 +50,8 @@ export function createCustomer(customer: CustomerType) {
     })
 }
 
-export function deleteCustomer(id: UUID) {
+export function deleteCustomer(customer: DeleteCustomerType) {
+    const {id} = customer
     return db.customer.delete({
         where: {
             id

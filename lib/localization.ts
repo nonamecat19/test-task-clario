@@ -24,8 +24,8 @@ export async function initLocalization(locale: string) {
         lang() {
             return currentLocale
         },
-        t(key: string) {
-            const result = key
+        t(key?: string) {
+            const result = (key ?? "")
                 .split('.')
                 .reduce((acc: LocalizationJSON | string, part) => {
                     if (typeof acc === "string") return acc

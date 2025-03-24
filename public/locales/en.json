@@ -9,7 +9,15 @@
   "general": {
     "errors": {
       "unexpected": "Unexpected error occurred!",
-      "invalidBody": "Invalid request body"
+      "invalidBody": "Invalid request body",
+      "invalidParams": "Invalid request params",
+      "invalidQueryParams": "Invalid request query params"
+    }
+  },
+  "customers": {
+    "errors": {
+      "emailExists": "Customer with such email already exists",
+      "idNotFound": "Customer with such ID not found"
     }
   }
 }

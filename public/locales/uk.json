@@ -9,7 +9,15 @@
   "general": {
     "errors": {
       "unexpected": "Сталась неочікувана помилка!",
-      "invalidBody": "Неправельний body запиту"
+      "invalidBody": "Неправельний body запиту",
+      "invalidParams": "Неправильні params запиту",
+      "invalidQueryParams": "Неправильні query params запиту"
+    }
+  },
+  "customers": {
+    "errors": {
+      "emailExists": "Клієнт з даною електронною поштою вже існує",
+      "idNotFound": "Клієнт з таким ID не знайдений"
     }
   }
 }

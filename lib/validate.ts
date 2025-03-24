@@ -21,3 +21,21 @@ export async function validateBody<T>(
         };
     }
 }
+
+export async function validateParamsFromRequest<T>(
+    params: Record<string, unknown>,
+    schema: ZodSchema<T>
+): Promise<Success<T> | Failure> {
+    try {
+        const parsed = schema.parse(params);
+        return {
+            success: true,
+            data: parsed
+        };
+    } catch {
+        return {
+            success: false,
+            data: null
+        };
+    }
+}

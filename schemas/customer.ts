@@ -1,16 +1,25 @@
 import {z} from "zod";
 
-const customerIdSchema = z.object({id: z.string().uuid()})
-
-export const customerSchema = z.object({
-    email: z.string(),
+const customerSchema = z.object({
+    id: z.string().uuid(),
+    email: z.string().email(),
     name: z.string()
 })
 
-export type CustomerType = z.infer<typeof customerSchema>
+export const createCustomerSchema = customerSchema.omit({id: true})
+
+export type CreateCustomerType = z.infer<typeof createCustomerSchema>
 
 export const updateCustomerSchema = customerSchema
     .partial()
-    .and(customerIdSchema)
+    .required({id: true})
 
 export type UpdateCustomerType = z.infer<typeof updateCustomerSchema>
+
+export const deleteCustomerSchema = customerSchema.pick({id: true})
+
+export type DeleteCustomerType = z.infer<typeof deleteCustomerSchema>
+
+export const getCustomerByIdSchema = customerSchema.pick({id: true})
+
+export type GetCustomerByIdType = z.infer<typeof getCustomerByIdSchema>
