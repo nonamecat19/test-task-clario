@@ -1,9 +1,18 @@
 ## Getting Started
 
-First, run the development server:
-
+Install dependencies
 ```bash
-  cp .env.example .env
+    npm i -f
+```
+
+Copy environment from example
+```bash
+    cp .env.example .env
+```
+
+For local development
+```bash
+    npm run dev
 ```
 
 # API Documentation
