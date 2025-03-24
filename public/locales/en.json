@@ -8,7 +8,8 @@
   },
   "general": {
     "errors": {
-      "unexpected": "Unexpected error occurred!"
+      "unexpected": "Unexpected error occurred!",
+      "invalidBody": "Invalid request body"
     }
   }
 }
