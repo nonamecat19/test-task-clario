@@ -3,7 +3,9 @@
   "auth": {
     "errors": {
       "invalidEmail": "Неправильна електронна пошта!",
-      "invalidPassword": "Неправильний пароль!"
+      "invalidPassword": "Неправильний пароль!",
+      "authRequired": "Авторизація обов'язкова",
+      "invalidOrExpired": "Токен не корректний або застарілий"
     }
   },
   "general": {

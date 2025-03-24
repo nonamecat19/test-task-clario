@@ -3,7 +3,9 @@
   "auth": {
     "errors": {
       "invalidEmail": "Invalid email!",
-      "invalidPassword": "Invalid password!"
+      "invalidPassword": "Invalid password!",
+      "authRequired": "Authentication required",
+      "invalidOrExpired": "Token invalid or expired"
     }
   },
   "general": {
