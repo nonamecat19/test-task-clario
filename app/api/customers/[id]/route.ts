@@ -7,7 +7,7 @@ import {tryCatch} from "@/utils/try-catch";
 import {Prisma} from "@prisma/client";
 import {PrismaError} from "prisma-error-enum";
 
-export async function GET(request: Request, {params}: { params: GetCustomerByIdType }) {
+export async function GET(request: Request, {params}: { params: Promise<GetCustomerByIdType> }) {
     const {t} = await initApiLocalization(request)
 
     const {data: paramsData, success} = await validateParamsFromRequest(await params, getCustomerByIdSchema)
@@ -37,7 +37,7 @@ export async function GET(request: Request, {params}: { params: GetCustomerByIdT
 
 }
 
-export async function DELETE(request: Request, {params}: { params: DeleteCustomerType }) {
+export async function DELETE(request: Request, {params}: { params: Promise<DeleteCustomerType> }) {
     const {t} = await initApiLocalization(request)
 
     const {data: paramsData, success} = await validateParamsFromRequest(await params, deleteCustomerSchema)
