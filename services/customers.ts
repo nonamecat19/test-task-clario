@@ -20,7 +20,7 @@ export function getCustomersList({page = 0, perPage = 20}: GetCustomersListOptio
 
 export function getCustomerById(customer: GetCustomerByIdType) {
     const {id} = customer
-    return db.customer.findUnique({
+    return db.customer.findUniqueOrThrow({
         where: {
             id
         }

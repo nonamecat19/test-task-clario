@@ -21,6 +21,12 @@ export async function GET(request: Request, {params}: { params: GetCustomerByIdT
     const {data: customer, error} = await tryCatch(getCustomerById(paramsData))
 
     if (error) {
+        if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === PrismaError.RecordsNotFound) {
+            return Response.json(
+                {message: t("customers.errors.idNotFound")},
+                {status: StatusCodes.NOT_FOUND}
+            )
+        }
         return Response.json(
             {message: t("general.errors.unexpected")},
             {status: StatusCodes.INTERNAL_SERVER_ERROR}
