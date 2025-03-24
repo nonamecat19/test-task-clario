@@ -1,3 +1,14 @@
 {
-  "greeting": "Hello, user!"
+  "greeting": "Hello, user!",
+  "auth": {
+    "errors": {
+      "invalidEmail": "Invalid email!",
+      "invalidPassword": "Invalid password!"
+    }
+  },
+  "general": {
+    "errors": {
+      "unexpected": "Unexpected error occurred!"
+    }
+  }
 }
