@@ -9,7 +9,7 @@
   "general": {
     "errors": {
       "unexpected": "Сталась неочікувана помилка!",
-      "invalidBody": "Неправельний body запита"
+      "invalidBody": "Неправельний body запиту"
     }
   }
 }
