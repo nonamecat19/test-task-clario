@@ -4,7 +4,7 @@ import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
 
 type Props = {
-    // @ts-ignore
+    // eslint-disable-next-line
     spec: Record<string, any>,
 };
 
