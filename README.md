@@ -10,7 +10,12 @@ Copy environment from example
     cp .env.example .env
 ```
 
-For local development
+Prepare db (can require sudo)
+```bash
+    prisma db push
+```
+
+Local development serving
 ```bash
     npm run dev
 ```
