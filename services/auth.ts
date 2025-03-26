@@ -8,7 +8,7 @@ export async function login(email: string, password: string) {
         throw new Error("Invalid email", {cause: {code: "auth.errors.invalidEmail"}})
     }
 
-    const isPasswordValid = await bcrypt.compare(password, process.env.ADMIN_PASSWORD!);
+    const isPasswordValid = await bcrypt.compare(password, env.ADMIN_PASSWORD);
     if (!isPasswordValid) {
         throw new Error("Invalid password", {cause: {code: "auth.errors.invalidPassword"}})
     }
