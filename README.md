@@ -25,6 +25,13 @@ Local development serving
     npm run dev
 ```
 
+# OR
+
+Run in docker (can require sudo)
+```bash
+    docker compose up -d
+```
+
 # API Documentation
 
 This document outlines the available API endpoints for authentication and user interactions.
