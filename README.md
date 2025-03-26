@@ -10,6 +10,11 @@ Copy environment from example
     cp .env.example .env
 ```
 
+Run postgres locally 
+```bash
+    docker compose up -d db
+```
+
 Prepare db (can require sudo)
 ```bash
     prisma db push
