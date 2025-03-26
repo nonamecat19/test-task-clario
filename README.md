@@ -1,5 +1,7 @@
 ## Getting Started
 
+Note: Node.js version - v20.18.2, npm version 11.2.0
+
 Install dependencies
 ```bash
     npm i -f
